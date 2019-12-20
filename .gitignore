@@ -1,0 +1,10 @@
+ebin/
+deps/
+tests/
+basho_bench
+*~
+#*#
+tags
+_build/
+rebar.lock
+rebar3.crashdump

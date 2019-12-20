@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+language: erlang
+otp_release:
+  - 21.2
+script:
+  - make all
+  - make runbench
+  - sudo make results
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y r-base
+  - docker run -d --name antidote -p "8087:8087" antidotedb/antidote:0.2.0
+dist: bionic
